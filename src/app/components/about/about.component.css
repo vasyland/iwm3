@@ -1,0 +1,18 @@
+.junk-link {
+    margin: 1em 0;
+    padding: 1em .9em;
+    background-color: aqua;
+    color: blue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 5.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.red-square {
+    
+    background-color: rgb(233, 66, 121);
+}

@@ -1,0 +1,122 @@
+/*  Container  */
+.container {
+    width: 100%;
+    padding: 0.5em 0 0 2em;
+    /* margin-top: 0.5em; */
+    margin: auto;
+}
+  
+section .container .buy-list {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 0.8em;
+}
+  
+  /*  Table headers */
+.buy-list th {
+  text-align: center;
+  background-color: var(--neutral-color);
+}
+
+  .symbol-header,
+  .buy-price-header,
+  .best-price-header,
+  .price-header,
+  .yield-header,
+  .upper-yield-header {
+    text-align: center;
+    padding: 1.2em;
+    font-size: 1.2rem;
+  }
+  
+  .yield-header,
+  .upper-yield-header,
+  .yield,
+  .best-price-header {
+    display: none;
+  }
+  
+  /* Table body - data  */
+  .buy-list-symbol {
+    text-align: left;
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+  }
+  
+  .price {
+    text-align: right;
+    padding-right: 1.4em;
+  }
+  
+  .yield,
+  .upper-yield {
+    text-align: right;
+    padding-right: 1.6em;
+    display: none;
+  }
+  
+  .buy-price {
+    text-align: right;
+    padding-right: 1.6em;
+  }
+  
+  .buy-list tr td {
+    font-size: 1.4rem;
+  }
+  
+  .best-buy-price {
+    text-align: right;
+    padding-right: 1.4em;
+    display: none;
+  }
+  
+  /* Table features */
+  tr:nth-child(even) {
+    background: var(--even-color);
+    line-height: 100%;
+  }
+  
+  .buy-list tr:hover {
+    background-color: var(--highlight-color);
+  }
+  
+  .buy-list td:not(:last-child) {
+    border-right: 1px solid #ccc;
+  }
+  
+  .buy-list .buy-list-symbol:hover {
+    text-decoration: underline;
+  }
+  
+  /* Notes */
+  .container p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 1.3rem;
+  }
+  
+  .mtb-3 {
+    margin-top: 0;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .container {
+      width: 100%;
+      padding: 0.5em 1em;
+      max-width: 600px;
+    }
+    .yield-header,
+    .upper-yield-header,
+    .yield {
+      display: table-cell;
+    }
+    .best-price-header,
+    .upper-yield {
+      display: table-cell;
+    }
+    .best-buy-price {
+      display: table-cell;
+      transition: 1s;
+    }
+  }/*# sourceMappingURL=buy-list.component.css.map */

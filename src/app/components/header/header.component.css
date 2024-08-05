@@ -1,0 +1,56 @@
+.page-header{
+  width: 100%;
+  padding: 0 2em;
+  background-color: var(--primary-blue-color);
+  color:#FBFCFC;
+  display: flex;  
+}
+
+.page-header-logo{
+  align-self: center;
+  padding: 0 3em;
+}
+
+.common {
+  background-color: #ebf831;
+}
+.page-header-primary {
+  display: flex;
+  font-size: 1.8em;
+}
+
+.page-header-primary-nav{
+  margin-left: 2em;
+  font-family: "Roboto Mono", monospace;
+  width: 100vh;
+  padding: .5em 0 .5em 10em;
+}
+
+.page-header-primary-nav > a {
+  color: var(--primary-color); 
+}
+
+.page-header-login-logout{
+  width: 26vh;
+  
+  align-self: center;
+  padding: .5em;
+}
+
+.page-header-login-logout > a {
+  color: #FFFFFF;
+}
+
+a {
+  height: 100%;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: .4em;
+}
+
+
+
+h2 {
+    color: var(--highlight-color);
+}

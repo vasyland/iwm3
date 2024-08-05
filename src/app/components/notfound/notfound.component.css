@@ -1,0 +1,19 @@
+.page-not-found-container{
+    padding: 20em 0px;
+    text-align: center;
+}
+.page-not-found-container p {
+    font-size: 1.8rem;
+}
+
+
+h1{
+    font-weight: bold;
+    margin: 10px;
+    color: var(--loser-color);
+}
+
+.page-not-found{
+    /* color: #FF5733; */
+    font-weight: bold;
+}

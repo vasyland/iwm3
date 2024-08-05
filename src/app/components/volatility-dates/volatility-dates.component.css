@@ -1,0 +1,63 @@
+.container {
+    width: 100%;
+    padding: 0.5em 0 0 2em;
+    /* margin-top: 0.5em; */
+    margin: auto;
+}
+
+section .container .volatilitydate-list {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 0.8em;
+  }
+
+    /*  Table headers */
+.volatilitydate-list th {
+    text-align: center;
+    background-color: var(--neutral-color);
+}
+
+.volatilitydate-header,
+.description-header,
+.comments-header {
+  text-align: center;
+  padding: 1.2em;
+  font-size: 1.2rem;
+}
+
+/* Table body - data  */
+.volatility-date {
+    text-align: left;
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+  }
+
+.volatilitydate-list tr td {
+  font-size: 1.4rem;
+}
+
+ /* Table features */
+ tr:nth-child(even) {
+    background: var(--even-color);
+    line-height: 100%;
+}
+
+.volatilitydate-list tr:hover {
+    background-color: var(--highlight-color);
+  }
+
+  .volatilitydate-list td:not(:last-child) {
+    border-right: 1px solid #ccc;
+  }
+
+
+@media screen and (min-width: 800px) {
+    .container {
+      width: 100%;
+      padding: 0.5em 1em;
+      max-width: 800px;
+    }
+
+  
+}

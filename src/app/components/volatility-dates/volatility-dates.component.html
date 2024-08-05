@@ -1,0 +1,23 @@
+<main>
+
+    <div class="container">
+        <h1 class="page__title">Market Volatility Dates</h1>
+        <table class="volatilitydate-list">
+            <thead>
+                <tr>
+                    <th class="volatilitydate-header">Date</th>
+                    <th class="description-header">Description</th>
+                    <th class="comments-header">Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let vd of volatilityDays">
+                  <td class="volatility-date">{{vd.dayDate | date }}</td>
+                  <td class="action-description">{{vd.actionDescription }}</td>
+                  <td class="comments">{{vd.description }}</td>
+               </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </div>
+</main>
