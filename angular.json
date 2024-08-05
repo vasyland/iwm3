@@ -50,7 +50,10 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "options": {
+                "port": 5002
+              }
             }
           },
           "defaultConfiguration": "production"

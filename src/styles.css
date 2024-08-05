@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../public/assets/styles/reset.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway+Dots&display=swap');
+
+/* * { outline: 1px solid red; } */
+
+:root {
+  --main-background-color: #f1f6fa;
+  --secondary-title-color: #464646;
+  --primary-color: #D5DFFA;
+  --primary-blue-color: #4B6AC3;
+  --secondary-color: #5c85b7;
+  --highlight-color: #dbd94e;
+  --neutral-color: #E9EDF1;
+  --even-color: #E6EFF9;
+  --text-paragraph-color: #574a4a;
+  --loser-color: #d60a22;
+  --gradient: linear-gradient(-255deg, var(--primary-color), var(--secondary-color));
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: Roboto, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  font-family: "Roboto";
+  
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  padding: 1em 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.active {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: #39658C;
+}
+
+.page__title {
+  color: var(--primary-blue-color);
+}
