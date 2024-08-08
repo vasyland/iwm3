@@ -1,0 +1,30 @@
+<main>
+  
+    <div class="container">
+        <h1 class="page__title">Recommended Buy List</h1>
+        <table class="buy-list">
+            <thead>
+                <tr>
+                    <th class="symbol-header">Symbol</th>
+                    <th class="price-header">Current Price</th>
+                    <th class="yield-header">Yield,%</th>
+                    <th class="upper-yield-header">Top Yield,%</th>
+                    <th class="buy-price-header">Allowed Buy Price</th>
+                    <th class="best-price-header">Best Buy Price</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let s of buySymbolData">
+                  <td class="buy-list-symbol">{{s.symbol | uppercase}}</td>
+                  <td class="price">{{s.currentPrice | number:'1.2-3' }}</td>
+                  <td class="yield">{{s.currentYield | number:'1.2-3' }}</td>
+                  <td class="upper-yield">{{s.upperYield | number:'1.2-4' }}</td>
+                  <td class="buy-price">{{s.allowedBuyPrice | number:'1.2' }}</td>
+                  <td class="best-buy-price">{{s.bestBuyPrice | number:'1.2' }}</td>
+               </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </div>
+</main>
+

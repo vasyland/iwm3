@@ -23,6 +23,10 @@ export const routes: Routes = [
         loadComponent: () => import('./components/buy-list-ca/buy-list-ca.component')
              .then(c => c.BuyListCaComponent)
     },
+    { path: 'us-buy-list', 
+        loadComponent: () => import('./components/buy-list-us/buy-list-us.component')
+             .then(c => c.BuyListUsComponent)
+    },
     { path: 'volatility-dates', 
         loadComponent: () => import('./components/volatility-dates/volatility-dates.component')
              .then(c => c.VolatilityDatesComponent)

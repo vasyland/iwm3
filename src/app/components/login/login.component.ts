@@ -3,6 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
 import { Signup } from '../../models/signup';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginComponent {
   password: string = '';
 
   private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
 
   constructor() {}
 
@@ -54,6 +56,7 @@ export class LoginComponent {
         // console.log("ACCEESS TOKEN: " + this.signupData.access_token);
         console.log("ACCEESS TOKEN FROM  STORAGE: " + localStorage.getItem('accessToken'));
       });
+      this.router.navigateByUrl('/features');
 
     } else {
 

@@ -12,7 +12,11 @@ export class FeaturesService {
   constructor() { }
 
   getCABuyList(): Observable<BuySymbol[]> {
-    return this.http.get<BuySymbol[]>('https://localhost:8081/free/free-buy-list');
+    return this.http.get<BuySymbol[]>('https://localhost:8081/free/free-ca-buy-list');
+  }
+
+  getUSBuyList(): Observable<BuySymbol[]> {
+    return this.http.get<BuySymbol[]>('https://localhost:8081/api/us-buy-list');
   }
 
   getVolatilityDaysList(): Observable<VolatilityDay[]> {
