@@ -5,6 +5,7 @@
 ```
 cd C:\AV\WorkProjects\iwm3
 mklink /d node_modules C:\AV\WorkProjects\iwm3\node_modules
+rmdir node_modules
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
