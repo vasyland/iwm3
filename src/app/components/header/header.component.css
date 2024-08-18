@@ -8,7 +8,7 @@
 
 .page-header-logo{
   align-self: center;
-  padding: 0 3em;
+  padding: 0 .5em;
 }
 
 .common {
@@ -23,7 +23,7 @@
   margin-left: 2em;
   font-family: "Roboto Mono", monospace;
   width: 100vh;
-  padding: .5em 0 .5em 10em;
+  padding: .5em 0 .5em 6em;
 }
 
 .page-header-primary-nav > a {

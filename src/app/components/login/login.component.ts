@@ -14,7 +14,6 @@ templateUrl: './login.component.html',
 })
 export class LoginComponent {
 
-  isLoginMode: boolean = true;
   isLoading: boolean = false;
   // authObs: Observable<AuthResponse>;
 
@@ -27,27 +26,22 @@ export class LoginComponent {
 
   private authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);
-
+  
   constructor() {}
-
-  onswitchMode() {
-    this.isLoginMode = !this.isLoginMode;
-  }
 
   onFormSubmitted(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
 
-    if(this.isLoginMode){
       this.isLoading = true;
-      // this.authObs = this.authService.login(email, password);
       const login$ = this.authService.login(email, password);
       login$.subscribe((response: HttpResponse<any>) => {
         this.signupData = response.body;
   
-        const headers: HttpHeaders = response.headers;
-        console.log("BODY: " + response.body);
-    
+        // const headers: HttpHeaders = response.headers;
+        // console.log("BODY: " + response.body);
+        // console.log("REFRESH COOKIE: " + response.headers.get('refresh_token'));
+
         localStorage.setItem('accessToken', this.signupData.access_token);
         localStorage.setItem('userId', this.signupData.id);
   
@@ -55,24 +49,14 @@ export class LoginComponent {
         // console.log("ACCEESS TOKEN: " + this.signupData.access_token);
         console.log("ACCEESS TOKEN FROM  STORAGE: " + localStorage.getItem('accessToken'));
       });
+      form.reset();
       this.router.navigateByUrl('/features');
-
-    } else {
-
-      this.isLoading = true;
-      //this.authObs = this.authService.signup(email, password);
-      const signup$ = this.authService.signup(email, password);
-
-      signup$.subscribe((response: HttpResponse<any>) => {
-
-        this.signupData = response.body;
-        console.log("SIGN-UP USER ID: " + this.signupData.id);
-      });
-      
-    }
-
-    form.reset();
   }
+
+  navigateToRegister() {
+    this.router.navigateByUrl('/register');
+  }
+}
 
 
 // Working Copy
@@ -167,5 +151,3 @@ export class LoginComponent {
   //   );
   // }
 
-
-}

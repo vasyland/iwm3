@@ -3,11 +3,14 @@ import { provideRouter, withDebugTracing } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { loginResponseInterceptor } from './interceptors/login-response.interceptor';
+// import { loginResponseInterceptor } from './interceptors/login-response.interceptor';
+import { customInterceptor } from './interceptors/custom.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes, withDebugTracing()),
-    provideHttpClient(withInterceptors([loginResponseInterceptor]))
+    provideHttpClient(withInterceptors([customInterceptor]))
   ]
 };
+
+//withInterceptors([customInterceptor])

@@ -16,7 +16,7 @@ export class BuyListUsComponent {
   private featuresService = inject(FeaturesService);
 
   ngOnInit(): void {
-
+    //debugger;
     const s$ = this.featuresService
       .getUSBuyList()
       .pipe(shareReplay(5),

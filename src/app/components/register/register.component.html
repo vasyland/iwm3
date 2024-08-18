@@ -1,7 +1,7 @@
-<div class="login-content">
-    <div class="app-login-form">
-        <h2>Login</h2>
-        <form class="login-form" #authForm="ngForm" (ngSubmit)="onFormSubmitted(authForm)">
+<div class="register-content">
+    <div class="app-register-form">
+        <h2>Register</h2>
+        <form class="register-form" #authForm="ngForm" (ngSubmit)="onFormSubmitted(authForm)">
             <div class="form-input">
                 <label>Email Address</label>
                 <input type="email" 
@@ -15,16 +15,18 @@
                 ngModel required minlength="3">
             </div>           
             <button type="submit" 
-                    name="login" 
-                    class="app-login-btn"
-                    [disabled]="authForm.invalid">Register</button>
-            <p>Do not have an accout yet? 
+                    name="register" 
+                    class="app-register-btn"
+                    [disabled]="authForm.invalid">
+                Register
+            </button>
+            <p>Already have and account? 
                 <button class="app-toggle-btn" 
-                    type="button" 
-                    (click)="navigateToRegister()">Register Here
+                    type="button" (click)="navigateToLogin()">Login here
                 </button>
             </p>
         </form>
     </div>
 </div>
+
 

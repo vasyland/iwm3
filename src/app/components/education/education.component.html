@@ -1,0 +1,38 @@
+<div class="section-header">
+    <h1>Education</h1>
+</div>
+
+<div class="container">
+  <h1 class="page__title">Example of recommended Canadian Buy List</h1>
+  <table class="buy-list">
+      <thead>
+          <tr>
+              <th class="symbol-header">Symbol</th>
+              <th class="price-header">Current Price</th>
+              <th class="yield-header">Yield,%</th>
+            
+              <th class="buy-price-header">Allowed Buy Price</th>
+              <th class="best-price-header">Best Buy Price</th>
+              <th class="updated-on">Updated On</th>
+          </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let s of marketingCaSymbolsData">
+            <td class="buy-list-symbol">{{s.symbol | uppercase}}</td>
+            <td class="price">{{s.currentPrice | number:'1.2-3' }}</td>
+            <td class="yield">{{s.currentYield | number:'1.2-3' }}</td>
+            
+            <td class="buy-price">{{s.allowedBuyPrice | number:'1.2' }}</td>
+            <td class="best-buy-price">{{s.bestBuyPrice | number:'1.2' }}</td>
+            <td class="updated-on">{{s.updatedOn | date }}</td>
+         </tr>
+      </tbody>
+  </table>
+  <p>&nbsp;</p>
+</div>
+
+<div class="home-page-services">
+  check yourself company's finacial reports and do your own reseach before you buy one of the stock from the recommended list. 
+  We provide you with what we found suitable to invest into..
+</div>
+

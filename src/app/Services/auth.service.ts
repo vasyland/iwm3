@@ -41,13 +41,17 @@ export class AuthService {
       )
   }
 
+  logout() {
+    localStorage.clear();
+  }
+
   /**
    * 
    * @param email New User Registration
    * @param password 
    * @returns 
    */
-  signup(email: string, password: string): Observable<HttpResponse<Signup>> {
+  signup(email: string, password: string): Observable<Signup> {
 
     var prefix = this.extractEmailPrefix(email);
 
@@ -59,7 +63,7 @@ export class AuthService {
       userRole: 'ROLE_USER'
     };
     
-    return this.http.post<HttpResponse<Signup>> ('https://localhost:8081/sign-up', data);
+    return this.http.post<Signup> ('https://localhost:8081/sign-up', data);
   }
 
 

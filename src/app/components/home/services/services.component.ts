@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FeaturesService } from '../../../Services/features.service';
+import { MarketingSymbol } from '../../../models/marketing-symbol';
+import { shareReplay, retry } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-services',
@@ -8,5 +12,5 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
-
+ 
 }
