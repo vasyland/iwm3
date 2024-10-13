@@ -1,7 +1,7 @@
 
   <div class="page-header">
       <div class="page-header-logo">
-        <h2>Blue Income</h2>
+        <h2>iWM3</h2>
       </div>
      
         <div class="page-header-primary">
@@ -12,9 +12,14 @@
               <a routerLink="features" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Features</a>
           </div>
           <div class="page-header-login-logout">
-              <a routerLink="login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Login</a>
-              <a routerLink="register" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Register</a>
-              <a routerLink="logout" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Logout</a>
+              <a routerLink="login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="!authService.isLoggedIn">Login</a>
+
+              <a routerLink="join" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="!authService.isLoggedIn">JoinNow</a>
+
+              <a routerLink="logout" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"  
+              *ngIf="authService.isLoggedIn" (click)="authService.logout()">Logout</a>
           </div>
         </div>
         

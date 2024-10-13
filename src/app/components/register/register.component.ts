@@ -18,7 +18,9 @@ export class RegisterComponent {
 
   isLoading: boolean = false;
   credentials = { email: String, password: String };
-  signupData: Signup;
+  signupData!: Signup;
+  responseData!: Signup;
+  statusCode: number = 0;
 
   userId: string;
   username: string = '';
@@ -35,19 +37,21 @@ export class RegisterComponent {
     this.isLoading = true;
 
     const signup$ = this.authService.signup(email, password);
-    signup$.subscribe((response) => {
-      
-      console.log("REGISTERED RESPONSE");
-      console.log(response);
-      
-      this.signupData = response;
+      signup$.subscribe({
+        next: (response: HttpResponse<Signup>) => {
+          console.log('Full Response:', response);   // Full response (headers + body)
+          this.signupData = response.body!;        // Extract the body (Signup)
+          this.statusCode = response.status;         // Extract status code if needed
+          console.log('ID:', this.signupData.id);
 
-      console.log("REGISTERED USER ID: " + this.signupData.id);
-
-      localStorage.setItem('accessToken', this.signupData.access_token);
-      localStorage.setItem('userId', this.signupData.id);
-
-    });
+          localStorage.setItem('accessToken', this.signupData.access_token);
+          localStorage.setItem('userId', this.signupData.id);
+          this.authService.isLoggedIn = true;
+        },
+        error: (error) => {
+          console.error('Error during signup!', error);  // Handle error
+        }
+      });
     // debugger;
     form.reset();
     this.router.navigateByUrl('/features');

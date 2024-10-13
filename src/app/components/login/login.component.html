@@ -4,24 +4,26 @@
         <form class="login-form" #authForm="ngForm" (ngSubmit)="onFormSubmitted(authForm)">
             <div class="form-input">
                 <label>Email Address</label>
-                <input type="email" 
-                name="email" 
+                <input type="email" name="email" 
                 ngModel required email>
             </div>
             <div class="form-input">
                 <label>Password</label>
-                <input type="password" 
-                name="password" 
+                <input type="password" name="password" 
                 ngModel required minlength="3">
             </div>           
             <button type="submit" 
                     name="login" 
                     class="app-login-btn"
-                    [disabled]="authForm.invalid">Register</button>
+                    [disabled]="authForm.invalid">Login</button>
             <p>Do not have an accout yet? 
                 <button class="app-toggle-btn" 
                     type="button" 
                     (click)="navigateToRegister()">Register Here
+                </button>
+                <button class="app-toggle-btn" 
+                    type="button" 
+                    (click)="logout()">logout
                 </button>
             </p>
         </form>

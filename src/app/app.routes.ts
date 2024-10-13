@@ -35,7 +35,7 @@ export const routes: Routes = [
         loadComponent: () => import('./components/login/login.component')
              .then(c => c.LoginComponent)
     },
-    { path: 'register', 
+    { path: 'join', 
         loadComponent: () => import('./components/register/register.component')
              .then(c => c.RegisterComponent)
     },

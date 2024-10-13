@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BuyListCaComponent } from '../buy-list-ca/buy-list-ca.component';
 import { RouterOutlet, RouterLink, RouterModule } from '@angular/router';
 import { VolatilityDatesComponent } from '../volatility-dates/volatility-dates.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-features',
@@ -11,5 +12,8 @@ import { VolatilityDatesComponent } from '../volatility-dates/volatility-dates.c
   styleUrl: './features.component.css'
 })
 export class FeaturesComponent {
+  public assetsPath: string = environment.assetsPath; // Define a property
+
+[x: string]: any;
 
 }

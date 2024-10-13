@@ -24,7 +24,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
-  private authService: AuthService = inject(AuthService);
+  authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);
   
   constructor() {}
@@ -38,16 +38,13 @@ export class LoginComponent {
       login$.subscribe((response: HttpResponse<any>) => {
         this.signupData = response.body;
   
-        // const headers: HttpHeaders = response.headers;
-        // console.log("BODY: " + response.body);
-        // console.log("REFRESH COOKIE: " + response.headers.get('refresh_token'));
-
         localStorage.setItem('accessToken', this.signupData.access_token);
         localStorage.setItem('userId', this.signupData.id);
   
         console.log("USER ID: " + this.signupData.id);
         // console.log("ACCEESS TOKEN: " + this.signupData.access_token);
         console.log("ACCEESS TOKEN FROM  STORAGE: " + localStorage.getItem('accessToken'));
+        this.authService.isLoggedIn = true;
       });
       form.reset();
       this.router.navigateByUrl('/features');
@@ -56,6 +53,18 @@ export class LoginComponent {
   navigateToRegister() {
     this.router.navigateByUrl('/register');
   }
+
+  logout(): void {
+    console.log("Logout button clicked...");
+    const logout$ =  this.authService.logout();
+    console.log("Logout button clicked ended...");
+
+    // logout$.subscribe((res: HttpResponse<any>) => {
+    //   debugger;
+    //   console.log("LOGOUT POST STATUSTEXT IS: " + res);
+    // });
+  }
+
 }
 
 

@@ -3,7 +3,7 @@
       <p class="features-path">Choose a stock from the following lists to invest in. Conduct your own review and research on the selected stock. Also, check for the best buying day.</p>
       <div class="feature-list">
         <article>
-            <a routerLink="/ca-buy-list"><img src="/assets/images/features/TSX.png" alt="TSX List"></a>
+            <a routerLink="/ca-buy-list"><img src="assets/images/features/TSX.png" alt="TSX List"></a>
             <a routerLink="/ca-buy-list" class="feature-title">A List of Canadian Stocks to Buy</a>
             <a routerLink="/ca-buy-list" class="cta">
                 <p>View List</p>
@@ -13,7 +13,7 @@
             </a>
         </article>
         <article>
-            <a routerLink="/us-buy-list"><img src="/assets/images/features/NYSE.png" alt="NYSE List"></a>
+            <a routerLink="/us-buy-list"><img src="assets/images/features/NYSE.png" alt="NYSE List"></a>
             <a routerLink="/us-buy-list" class="feature-title">A List of American Stocks to Buy</a>
             <a routerLink="/us-buy-list" class="cta">
                 <p>View List</p>
@@ -23,7 +23,7 @@
             </a>
         </article>
         <article>
-            <a routerLink="/volatility-dates"><img src="/assets/images/features/DayForecast.png" alt="TSX List"></a>
+            <a routerLink="/volatility-dates"><img [src]="assetsPath + 'images/features/DayForecast.png'" alt="TSX List"></a>
             <a routerLink="/volatility-dates" class="feature-title">Forecasting The Best Buying Days</a>
             <a routerLink="/volatility-dates" class="cta">
                 <p>View List</p>
